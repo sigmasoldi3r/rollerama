@@ -1,9 +1,10 @@
 {
-  "name": "rollerama",
+  "name": "@octantis/rollerama",
   "version": "1.0.0",
   "main": "lib/index.js",
   "license": "MIT",
   "type": "module",
+  "private": false,
   "devDependencies": {
     "chai": "^4.3.7",
     "eslint": "^8.0.1",
