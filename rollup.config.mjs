@@ -1,5 +1,7 @@
+import commonjs from "@rollup/plugin-commonjs";
 import { readFile } from "fs/promises";
 import peg from "peggy";
+import resolve from "@rollup/plugin-node-resolve";
 
 /** @returns {import('rollup').Plugin} */
 function peggy() {
@@ -10,8 +12,8 @@ function peggy() {
         const source = await readFile(id).then((_) => _.toString());
         return peg.generate(source, {
           allowedStartRules: ["root", "expression"],
-          format: "es",
           output: "source",
+          format: "es",
         });
       }
       return null;
@@ -21,9 +23,10 @@ function peggy() {
 
 export default {
   input: "src/index.js",
+
   output: {
-    dir: "lib",
-    format: "es",
+    dir: "cjs",
+    format: "cjs",
   },
-  plugins: [peggy()],
+  plugins: [resolve(), commonjs(), peggy()],
 };

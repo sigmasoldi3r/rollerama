@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { compile } from "../lib/index.js";
+import { compile } from "../cjs/index.js";
 
 describe("Simple compilation", () => {
   it("Should encode the string to base64", () => {
