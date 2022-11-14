@@ -21,7 +21,7 @@
     "rollup": "rollup",
     "test": "mocha spec/*.spec.js",
     "pretest": "yarn build",
-    "ci": "echo No-op - Done CI",
+    "ci": "yarn",
     "prepublish": "yarn build"
   }
 }
